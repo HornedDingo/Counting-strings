@@ -14,7 +14,7 @@ int main(int argc, char *argv[]) {
     } else {
         int stringsCount = 1;
         int text[200];
-        file = fopen(filename, "r");
+        file = fopen(filename, "text");
         int c = getc(file);
         int i = 0;
         int number = 0;
@@ -22,7 +22,7 @@ int main(int argc, char *argv[]) {
             text[i] = c;
             c = getc(file);
             if (c == '\n') stringsCount++;
-                i++;
+            i++;
         }
         text[i] = EOF;
         i = 0;
@@ -34,8 +34,7 @@ int main(int argc, char *argv[]) {
             if (number == key - 1) {
                 printf("%c", text[i]);
             }
-            if (number == key) 
-                break;
+            if (number == key) break;
             else if (key > stringsCount || key < 1) {
                 printf("String does not exist");
                 break;
